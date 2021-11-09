@@ -1,9 +1,15 @@
 import "./style.css";
+import Heading from "./component/Heading/Heading"
+import {useState} from 'react'
 
 export const App = () => {
+ const [hello, sethello] = useState('hello react to nico')
+ const updateHello = () => sethello('thanks for updating me')
   return (
     <div className="App">
-      <h1>WELCOME TO CAPSTONE PROJECT ONE</h1>
+        <div onClick={updateHello}>
+            <Heading title = {hello}/>
+        </div>
     </div>
   );
 }
